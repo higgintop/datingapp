@@ -1,5 +1,9 @@
 @import './foundation/scss/foundation';
 
+h1 {
+  color: blue;
+}
+
 #container {
 	position:relative;
 	top:150px;
@@ -12,25 +16,3 @@
 	border-top: 5px solid #27c644;
 	border-bottom: 5px solid #27c644;
 }
-
-ul {
-
-	display: inline-block;
-
-	li {
-		display: inline-block;
-		text-decoration: none;
-		margin: 0px 50px;
-	}
-}
-
-.hidden {
-
-	display:none;
-}
-
-.profileContainer {
-	text-align: center;
-}
-
-

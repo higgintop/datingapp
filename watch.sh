@@ -19,6 +19,7 @@ nodemon --watch app/js \
 mkdir public/vendor
 cp bower_components/jquery/dist/jquery.min.js public/vendor
 cp bower_components/lodash/lodash.min.js public/vendor
+cp bower_components/foundation/js/foundation.js public/vendor
 
 ###############################
 # Jade (npm intalled locally) #
@@ -39,6 +40,14 @@ nodemon -e scss --watch app/styles \
     --include-path bower_components \
     --source-map-embed \
     app/styles/main.scss public/css/main.css" &
+
+    nodemon -e scss --watch app/styles \
+  --exec "./node_modules/node-sass/bin/node-sass \
+    --output-style compressed \
+    --include-path styles \
+    --include-path bower_components \
+    --source-map-embed \
+    app/styles/matches.scss public/css/matches.css" &
 
 #####################################
 # Browserify (npm intalled locally) #

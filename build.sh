@@ -18,7 +18,6 @@ cp bower_components/jquery/dist/jquery.min.js public/vendor
 cp bower_components/lodash/lodash.min.js public/vendor
 cp bower_components/firebase/firebase.js public/vendor
 
-
 ###############################
 # Jade (npm intalled locally) #
 ###############################
@@ -39,6 +38,14 @@ rm -rf public/_*.html
   --include-path bower_components \
   --source-map-embed \
   app/styles/main.scss public/css/main.css
+
+  ./node_modules/node-sass/bin/node-sass \
+  --output-style compressed \
+  --include-path styles \
+  --include-path bower_components \
+  --source-map-embed \
+  app/styles/matches.scss public/css/matches.css
+
 
 #####################################
 # Browserify (npm intalled locally) #
