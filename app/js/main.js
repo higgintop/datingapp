@@ -12,7 +12,7 @@ Logic for:
 var FIREBASE_URL = 'https://datingappcohort8.firebaseio.com';
 var fb = new Firebase(FIREBASE_URL);
 var usersFbUrl;
-var usersFb;
+var usersFb, likesFb, dislikesFb;
 var token;
 
 // initially login and register forms are hidden
@@ -107,6 +107,9 @@ if(fb.getAuth()) {
   
   // do a GET to get the profile info
   usersFb = fb.child('users/' + fb.getAuth().uid + '/profile');
+  dislikesFb = fb.child('users/' + fb.getAuth().uid + '/data/dislikes');
+  likesFb = fb.child('users/' + fb.getAuth().uid + '/data/likes');
+
   
   usersFb.once('value', function (res){
     var data = res.val();
